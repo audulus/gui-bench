@@ -28,6 +28,9 @@ pub struct Framework {
     /// The framework runs without `--frameworks`. Editions that compare versions or renderers
     /// of a framework run only by name.
     pub default: bool,
+    /// The framework runs with `--full`. A framework that is not ready for the comparison runs
+    /// only by name.
+    pub full: bool,
     /// The parts of the scenarios that the app builds by hand or around a defect, because the
     /// framework has no working part of its own: `(part, note)`. Results mark them.
     pub flags: &'static [(&'static str, &'static str)],
@@ -114,6 +117,7 @@ pub const ALL: &[Framework] = &[
         build: "",
         marks: true,
         default: true,
+        full: true,
         flags: NO_FLAGS,
     },
     Framework {
@@ -123,6 +127,7 @@ pub const ALL: &[Framework] = &[
         build: "",
         marks: false,
         default: true,
+        full: true,
         flags: GPUI,
     },
     Framework {
@@ -132,6 +137,7 @@ pub const ALL: &[Framework] = &[
         build: "tuned",
         marks: false,
         default: true,
+        full: true,
         flags: GPUI,
     },
     Framework {
@@ -141,6 +147,7 @@ pub const ALL: &[Framework] = &[
         build: "",
         marks: false,
         default: false,
+        full: true,
         flags: GPUI,
     },
     Framework {
@@ -150,6 +157,7 @@ pub const ALL: &[Framework] = &[
         build: "",
         marks: false,
         default: true,
+        full: true,
         flags: FREYA,
     },
     Framework {
@@ -159,6 +167,7 @@ pub const ALL: &[Framework] = &[
         build: "",
         marks: false,
         default: false,
+        full: true,
         flags: FREYA,
     },
     Framework {
@@ -168,6 +177,7 @@ pub const ALL: &[Framework] = &[
         build: "",
         marks: false,
         default: true,
+        full: true,
         flags: VIZIA,
     },
     Framework {
@@ -177,6 +187,7 @@ pub const ALL: &[Framework] = &[
         build: "",
         marks: false,
         default: true,
+        full: true,
         flags: FLOEM,
     },
     Framework {
@@ -186,6 +197,7 @@ pub const ALL: &[Framework] = &[
         build: "",
         marks: false,
         default: true,
+        full: true,
         flags: ICED,
     },
     Framework {
@@ -195,6 +207,7 @@ pub const ALL: &[Framework] = &[
         build: "tuned",
         marks: false,
         default: true,
+        full: true,
         flags: ICED,
     },
     Framework {
@@ -204,6 +217,7 @@ pub const ALL: &[Framework] = &[
         build: "",
         marks: false,
         default: true,
+        full: true,
         flags: EGUI,
     },
     Framework {
@@ -213,6 +227,7 @@ pub const ALL: &[Framework] = &[
         build: "",
         marks: false,
         default: true,
+        full: true,
         flags: DIOXUS,
     },
     Framework {
@@ -222,6 +237,7 @@ pub const ALL: &[Framework] = &[
         build: "skia",
         marks: false,
         default: false,
+        full: true,
         flags: DIOXUS,
     },
     Framework {
@@ -230,7 +246,8 @@ pub const ALL: &[Framework] = &[
         package: "bough",
         build: "",
         marks: false,
-        default: true,
+        default: false,
+        full: false,
         flags: LORELEI,
     },
     Framework {
@@ -240,6 +257,7 @@ pub const ALL: &[Framework] = &[
         build: "",
         marks: false,
         default: true,
+        full: true,
         flags: TAURI,
     },
 ];
@@ -249,6 +267,14 @@ impl Framework {
     pub fn defaults() -> Vec<String> {
         ALL.iter()
             .filter(|f| f.default)
+            .map(|f| f.name.to_owned())
+            .collect()
+    }
+
+    /// Returns the names of the frameworks that run with `--full`.
+    pub fn full() -> Vec<String> {
+        ALL.iter()
+            .filter(|f| f.full)
             .map(|f| f.name.to_owned())
             .collect()
     }

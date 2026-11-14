@@ -80,7 +80,8 @@ Editions are other builds of an app:
 | dioxus-skia | Skia renderer |
 
 The tuned editions run by default; the last three run by name or with
-`just full`. `run.json` records the exact version and git revision of every
+`just full`. Lorelei is not yet a complete framework and runs only by name
+(`--frameworks lorelei`). `run.json` records the exact version and git revision of every
 framework.
 
 Apps use built-in widgets and the patterns their docs teach, with framework

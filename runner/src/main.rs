@@ -40,7 +40,8 @@ struct Args {
     #[arg(long, value_delimiter = ',', default_value = "app,list")]
     scenarios: Vec<String>,
     /// The frameworks, comma separated. The default leaves out the editions that compare
-    /// versions or renderers of a framework: gpui-kit-fast, freya-056a5b4, dioxus-skia.
+    /// versions or renderers of a framework: gpui-kit-fast, freya-056a5b4, dioxus-skia. Lorelei
+    /// runs only by name.
     #[arg(long, value_delimiter = ',')]
     frameworks: Vec<String>,
     /// The row counts, comma separated, for every selected scenario. Each scenario has its own
@@ -111,7 +112,7 @@ fn main() -> anyhow::Result<()> {
     }
     if args.frameworks.is_empty() {
         args.frameworks = if args.full {
-            frameworks::ALL.iter().map(|f| f.name.to_owned()).collect()
+            Framework::full()
         } else {
             Framework::defaults()
         };
