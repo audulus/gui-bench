@@ -78,6 +78,28 @@ const TAURI: &[(&str, &str)] = &[(
     "renderer",
     "the app turns the DMA-BUF renderer of WebKitGTK off, as Tauri apps do on Wayland with NVIDIA",
 )];
+const LORELEI: &[(&str, &str)] = &[
+    (
+        "switch",
+        "no component library: the app builds the switches and the checkboxes from boxes",
+    ),
+    (
+        "menu",
+        "no menu or popover: the app places a box of items at the spot under the button",
+    ),
+    (
+        "spinner",
+        "no timer, rotation or repeating animation in the application surface: the host's frame callback turns an inline svg and counts the live ticks",
+    ),
+    (
+        "font",
+        "the system sans-serif makes the text layer panic: the app takes the first sans-serif face that it can shape",
+    ),
+    (
+        "reclaim",
+        "the Wayland host never frees the elements that left the tree: the app runs empty turns after a frame until they are free",
+    ),
+];
 const DIOXUS: &[(&str, &str)] = &[(
     "list",
     "no virtual list: the app renders the rows of the viewport from the scroll offset",
@@ -201,6 +223,15 @@ pub const ALL: &[Framework] = &[
         marks: false,
         default: false,
         flags: DIOXUS,
+    },
+    Framework {
+        name: "lorelei",
+        app: "lorelei",
+        package: "bough",
+        build: "",
+        marks: false,
+        default: true,
+        flags: LORELEI,
     },
     Framework {
         name: "tauri",

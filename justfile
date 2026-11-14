@@ -2,7 +2,7 @@
 default: build run plots
 
 # The framework apps under `apps/`.
-apps := "zgui gpui-kit gpui-kit-fast freya freya-056a5b4 vizia floem iced egui dioxus tauri"
+apps := "zgui gpui-kit gpui-kit-fast freya freya-056a5b4 vizia floem iced egui dioxus lorelei tauri"
 
 # Memory limits: the runner and the apps it launches, and one app build. Each runs in its own
 # systemd scope without swap, so a runaway process is killed there instead of stalling the host.

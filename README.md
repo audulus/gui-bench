@@ -66,6 +66,7 @@ To keep a run short:
 | iced | iced 0.14.0 | wgpu |
 | egui | eframe 0.37.0 | wgpu |
 | dioxus | dioxus-native 0.8.0-alpha.3 (Blitz) | vello-hybrid, wgpu |
+| lorelei | lorelei at `17635c1` (its crates are still named `bough`) | CPU, `wl_shm` buffers |
 | tauri | Tauri 2.12.5 with SolidJS 1.9.19, as the web-stack reference | WebKitGTK 2.52 |
 
 Editions are other builds of an app:

@@ -1,0 +1,23 @@
+[package]
+name = "lorelei-bench"
+version = "0.1.0"
+edition = "2024"
+license = "Apache-2.0"
+publish = false
+
+# Its own workspace, so the Lorelei stack resolves apart from every other app.
+[workspace]
+
+[dependencies]
+# Lorelei's crates still carry its former name: `bough` is the facade.
+#
+# The repository holds two crates named `parley`: 0.11.1 in `vendor/`, which the text layer
+# builds with, and 0.12.0 in an archived workspace. For a git dependency Cargo picks between
+# them by version, and a fresh resolution takes 0.12.0, which does not build. `Cargo.lock` holds
+# 0.11.1: keep it, and after a `cargo update` set the version of `parley` in it back.
+bough = { git = "https://github.com/philocalyst/lorelei", rev = "17635c1c98df61a512064e9a2f44a4396234a0a6" }
+# The text layer, for the check of `font.rs` that Lorelei can shape a font.
+bough-text = { git = "https://github.com/philocalyst/lorelei", rev = "17635c1c98df61a512064e9a2f44a4396234a0a6" }
+
+[profile.release]
+debug = 1

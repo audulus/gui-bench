@@ -5,8 +5,8 @@
 //! and theme; this module names the slot.
 
 /// The frameworks in plot order. Their index picks the hue.
-pub const FRAMEWORKS: [&str; 9] = [
-    "zgui", "gpui-kit", "freya", "vizia", "floem", "iced", "egui", "dioxus", "tauri",
+pub const FRAMEWORKS: [&str; 10] = [
+    "zgui", "gpui-kit", "freya", "vizia", "floem", "iced", "egui", "dioxus", "lorelei", "tauri",
 ];
 /// Editions and their framework.
 pub const EDITIONS: [(&str, &str); 5] = [
@@ -18,7 +18,7 @@ pub const EDITIONS: [(&str, &str); 5] = [
 ];
 /// The number of hues. The slot after them is the neutral of `tauri`, the web stack beside the
 /// native frameworks; a framework the list does not know takes one of the hues.
-const HUES: usize = 8;
+const HUES: usize = 9;
 
 /// Returns the framework of an edition, or the name itself.
 pub fn base(framework: &str) -> &str {
