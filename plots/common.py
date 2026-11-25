@@ -89,7 +89,7 @@ RESPONSES = [
     ("page-overview", "Switch to the overview"),
 ]
 # The part of the app that a measurement exercises, where an app may build that part by hand.
-PARTS = {"click-menu": "menu", "live": "spinner"}
+PARTS = {"click-menu": "menu", "click-filter": "checkbox", "live": "spinner"}
 # The pacing measurements of the app scenario: the report, and what the user does.
 PACED = [
     ("scroll", "Scroll, touchpad glide"),

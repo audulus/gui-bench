@@ -124,7 +124,7 @@ parts, framework versions. Each cell directory
 `<scenario>/<framework>/<hz>hz/<rows>/` holds `cell.json`, screenshots,
 `startup.json`, the app log and one report per step.
 
-`python3 plots/all.py <run>` writes `summary.csv` and seven figures:
+`python3 plots/all.py <run>` writes `summary.csv` and eight figures:
 
 | Figure | Shows |
 |---|---|
@@ -135,6 +135,7 @@ parts, framework versions. Each cell directory
 | `timelines.png` | a fling, frame by frame |
 | `baseline.png` | startup, memory, idle CPU, hover and binary size (of the size build, if built) of the small app |
 | `list.png` | the virtual list at both sizes |
+| `relative.png` | the median response of every interaction at the largest app size and of the list, colored against `gpui-kit` (`plots/relative.py --reference <framework> --rows <n>` for another) |
 
 The [explorer](explorer/README.md) is a web app over the same data.
 
