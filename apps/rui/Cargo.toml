@@ -12,7 +12,7 @@ publish = false
 # rui pinned to a rev of its `gui-bench-support` branch (audulus/rui#83), which adds what the
 # scenarios need and the 0.7.0 release lacks: a window size and decorations, hover from pointer
 # motion, wheel events, a scroll view, one-axis frames and text that wraps to its width.
-rui = { git = "https://github.com/audulus/rui", rev = "1af9ae199668f94e269fa0c044a38af5735e5121" }
+rui = { git = "https://github.com/audulus/rui", rev = "410b650f867758c39243a0b889b2537ebcdbf5a7" }
 
 [profile.release]
 debug = 1
