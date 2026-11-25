@@ -1485,7 +1485,7 @@ checksum = "19b30a45b0cd0bcca8037f3d0dc3421eaf95327a17cad11964fb8179b4fc4832"
 [[package]]
 name = "rui"
 version = "0.7.0"
-source = "git+https://github.com/audulus/rui?rev=dc11acfc5f79c6c0051a89fbbf32765ae5582816#dc11acfc5f79c6c0051a89fbbf32765ae5582816"
+source = "git+https://github.com/audulus/rui?rev=540c30b7d28d140e8844d569ab2f21989363d482#540c30b7d28d140e8844d569ab2f21989363d482"
 dependencies = [
  "accesskit",
  "console_error_panic_hook",
