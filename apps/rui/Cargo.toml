@@ -9,10 +9,10 @@ publish = false
 [workspace]
 
 [dependencies]
-# rui pinned to a rev of its `gui-bench-support` branch (audulus/rui#83), which adds what the
-# scenarios need and the 0.7.0 release lacks: a window size and decorations, hover from pointer
-# motion, wheel events, a scroll view, one-axis frames and text that wraps to its width.
-rui = { git = "https://github.com/audulus/rui", rev = "540c30b7d28d140e8844d569ab2f21989363d482" }
+# rui pinned to a rev of its `vger-text-cache` branch (audulus/rui#88). That is rui's main, with
+# the node tree and dirty tracking of audulus/rui#85-#87 and the window, scroll view, frame and text
+# support of audulus/rui#83, built on a vger that caches text layouts between frames.
+rui = { git = "https://github.com/audulus/rui", rev = "9d9078fd4e01d6cce6434ecec2af31e2b515172b" }
 
 [profile.release]
 debug = 1

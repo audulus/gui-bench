@@ -1485,7 +1485,7 @@ checksum = "19b30a45b0cd0bcca8037f3d0dc3421eaf95327a17cad11964fb8179b4fc4832"
 [[package]]
 name = "rui"
 version = "0.7.0"
-source = "git+https://github.com/audulus/rui?rev=540c30b7d28d140e8844d569ab2f21989363d482#540c30b7d28d140e8844d569ab2f21989363d482"
+source = "git+https://github.com/audulus/rui?rev=9d9078fd4e01d6cce6434ecec2af31e2b515172b#9d9078fd4e01d6cce6434ecec2af31e2b515172b"
 dependencies = [
  "accesskit",
  "console_error_panic_hook",
@@ -1926,8 +1926,7 @@ checksum = "0b928f33d975fc6ad9f86c8f283853ad26bdd5b10b7f1542aa2fa15e2289105a"
 [[package]]
 name = "vger"
 version = "0.3.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "73a68b09275cc39cbf3fb611151a3800bd527360a33ee3830def9e0c63e04174"
+source = "git+https://github.com/audulus/vger-rs?branch=text-layout-cache-0.3#9b758adace82b8e730c78558cd7c8eeae81eaa4c"
 dependencies = [
  "euclid",
  "fontdue",

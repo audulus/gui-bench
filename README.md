@@ -63,7 +63,7 @@ To keep a run short:
 | freya | freya 0.5.1 | Skia, Vulkan |
 | vizia | vizia 0.4.0 | Skia, OpenGL |
 | floem | floem at `1351ffb` | vger, wgpu |
-| rui | rui at `540c30b` (branch `gui-bench-support`) | vger, wgpu |
+| rui | rui at `9d9078f` (branch `vger-text-cache`) | vger (branch `text-layout-cache-0.3`), wgpu |
 | iced | iced 0.14.0 | wgpu |
 | egui | eframe 0.37.0 | wgpu |
 | dioxus | dioxus-native 0.8.0-alpha.3 (Blitz) | vello-hybrid, wgpu |
