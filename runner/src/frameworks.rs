@@ -103,6 +103,20 @@ const LORELEI: &[(&str, &str)] = &[
         "the Wayland host never frees the elements that left the tree: the app runs empty turns after a frame until they are free",
     ),
 ];
+const RUI: &[(&str, &str)] = &[
+    (
+        "checkbox",
+        "no checkbox: the app paints a box with a check mark in a row that toggles on a click",
+    ),
+    (
+        "menu",
+        "no menu or popover: the root stacks a layer with a box of items under the button",
+    ),
+    (
+        "list",
+        "no virtual list: the app builds the rows of the viewport from the scroll offset",
+    ),
+];
 const DIOXUS: &[(&str, &str)] = &[(
     "list",
     "no virtual list: the app renders the rows of the viewport from the scroll offset",
@@ -189,6 +203,16 @@ pub const ALL: &[Framework] = &[
         default: true,
         full: true,
         flags: FLOEM,
+    },
+    Framework {
+        name: "rui",
+        app: "rui",
+        package: "rui",
+        build: "",
+        marks: false,
+        default: true,
+        full: true,
+        flags: RUI,
     },
     Framework {
         name: "iced",

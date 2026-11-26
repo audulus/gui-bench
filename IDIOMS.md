@@ -57,6 +57,15 @@ Flagged parts carry their name in `run.json`.
 | vizia | line height | – | No `line-height` property. Message lines take the font's height, about 19 px. |
 | floem | menu | `menu` | Floem has no styleable menu. The app adds a stack of items with `add_overlay` under the button, as Floem's `Dropdown` does; the declarative `Overlay` view keeps the window from settling at the pinned revision. |
 | floem | spinner | `spinner` | A repeating keyframe animation stops after one pass at the pinned revision. The app turns an angle signal from `exec_after_animation_frame` and paints the square on a `canvas`, since vger draws a rotated rounded rect as its bounding box. |
+| rui | checkbox | `checkbox` | rui has no checkbox. A checkbox is a box painted on a `canvas`, filled with a check mark or empty with a border, in a row that toggles on a tap. |
+| rui | menu | `menu` | rui has no menu or popover. While the menu is open, the root `zstack` holds a layer with a box of items under the export button. |
+| rui | virtual list | `list` | rui has none. The list keeps its scroll offset in a `state`, moves it with `on_scroll`, and builds the visible rows and 4 more on each side, shifted by the part of a row scrolled away and clipped under the header. |
+| rui | timer | – | rui has no timer. As its `async` example does for background work, a thread sleeps 100 ms and posts each tick with `on_main`. The spinner is a square on a `canvas` that vger turns; an `anim` callback marks it changed on every frame. |
+| rui | font, weights | – | vger renders one built-in face with no weights. All text is that face, regular. |
+| rui | text input | – | The search is rui's `text_editor`, which has a fixed size of 18 px, a light gray text color and no placeholder; a label over it shows the placeholder while the search is empty. |
+| rui | shadows, borders | – | rui views have no shadow or border. The surface of a card, button or input is a `canvas` behind it that paints a vger blurred rect for the shadow and a filled rounded rect for the border. |
+| rui | colors | – | vger blends in linear space and rui renders to an sRGB surface, so the app converts the spec's sRGB colors to linear ones. |
+| rui | framework | – | The app builds on the `vger-text-cache` branch of rui (audulus/rui#88). The `gui-bench-support` work merged into it adds what the scenarios need and rui 0.7.0 lacks: a window size and decorations, hover from pointer motion instead of raw device motion, wheel events with `on_scroll`, a vertical `scroll` view (no scrollbar, no momentum, 40 px per wheel notch), one-axis frames (`fixed_width`, `fixed_height`), text that wraps to its width, an sRGB surface, and a toggle that stops re-rendering once its knob rests. |
 | dioxus | virtual list | `list` | Dioxus has none. `onscroll` gives the viewport; the component renders the visible rows and 8 more on each side between two spacers. |
 | dioxus | switch, menu | – | Written as on the web: a `button role=switch`, and a conditionally rendered absolute box for the menu. |
 | dioxus | placeholder | – | Blitz does not paint `placeholder`. A span over the input shows it. |

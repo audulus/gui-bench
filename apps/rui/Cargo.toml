@@ -1,0 +1,18 @@
+[package]
+name = "rui-bench"
+version = "0.1.0"
+edition = "2024"
+license = "Apache-2.0"
+publish = false
+
+# Its own workspace, so the rui stack resolves apart from every other app.
+[workspace]
+
+[dependencies]
+# rui pinned to a rev of its `vger-text-cache` branch (audulus/rui#88). That is rui's main, with
+# the node tree and dirty tracking of audulus/rui#85-#87 and the window, scroll view, frame and text
+# support of audulus/rui#83, built on a vger that caches text layouts between frames.
+rui = { git = "https://github.com/audulus/rui", rev = "9d9078fd4e01d6cce6434ecec2af31e2b515172b" }
+
+[profile.release]
+debug = 1

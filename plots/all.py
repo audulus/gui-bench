@@ -9,6 +9,7 @@ import baseline
 import capacity
 import common as c
 import export
+import relative
 import response
 import slope
 import smoothness
@@ -24,6 +25,7 @@ def outputs(run):
     yield timelines.plot(run)
     yield baseline.plot(run)
     yield virtual_list.plot(run)
+    yield relative.plot(run)
     yield export.export(run)
 
 

@@ -63,6 +63,7 @@ To keep a run short:
 | freya | freya 0.5.1 | Skia, Vulkan |
 | vizia | vizia 0.4.0 | Skia, OpenGL |
 | floem | floem at `1351ffb` | vger, wgpu |
+| rui | rui at `9d9078f` (branch `vger-text-cache`) | vger (branch `text-layout-cache-0.3`), wgpu |
 | iced | iced 0.14.0 | wgpu |
 | egui | eframe 0.37.0 | wgpu |
 | dioxus | dioxus-native 0.8.0-alpha.3 (Blitz) | vello-hybrid, wgpu |
@@ -123,7 +124,7 @@ parts, framework versions. Each cell directory
 `<scenario>/<framework>/<hz>hz/<rows>/` holds `cell.json`, screenshots,
 `startup.json`, the app log and one report per step.
 
-`python3 plots/all.py <run>` writes `summary.csv` and seven figures:
+`python3 plots/all.py <run>` writes `summary.csv` and eight figures:
 
 | Figure | Shows |
 |---|---|
@@ -134,6 +135,7 @@ parts, framework versions. Each cell directory
 | `timelines.png` | a fling, frame by frame |
 | `baseline.png` | startup, memory, idle CPU, hover and binary size (of the size build, if built) of the small app |
 | `list.png` | the virtual list at both sizes |
+| `relative.png` | the median response of every interaction at the largest app size and of the list, colored against `gpui-kit` (`plots/relative.py --reference <framework> --rows <n>` for another) |
 
 The [explorer](explorer/README.md) is a web app over the same data.
 
